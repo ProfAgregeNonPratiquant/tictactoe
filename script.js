@@ -23,7 +23,7 @@ function drawCircle(cell, ctx) {
 
 
 //const api_url = 'http://127.0.0.1:5000'
-const api_url = 'http://khyf.pythonanywhere.com'
+const api_url = 'https://khyf.pythonanywhere.com'
 
 function fetchAPI(endPoint, jsonGridState) {
     return fetch(api_url + '/' + endPoint, {
