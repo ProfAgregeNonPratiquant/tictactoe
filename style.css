@@ -2,3 +2,63 @@
     box-sizing: border-box;
     font-family: monospace;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-size: x-large;
+    
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 40px;
+    border-bottom: grey solid;
+    width: 300px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+a {
+    text-decoration: none;
+    color: grey;
+    display: inline-block;
+    flex-grow: 0.7;
+    text-align: center;
+    
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+a:hover {
+    color: black
+}
+a:focus {
+    color: black
+}
+
+main {
+    margin: auto;
+    margin-top: 20px;
+}
+
+button {
+    margin: 5px;
+}
+
+.gridRow {
+    display: flex;
+    height: 100px;
+    width: 300px;
+}
+
+.gridCell {
+    height: 100px;
+    width: 100px;
+}
