@@ -1,4 +1,4 @@
-const main = document.querySelector('main')
+
 
 // Réglages par défaut: le jeu se joue à deux, chacun son tour.
 let gameSettings = {
@@ -84,6 +84,14 @@ function chooseDifficulty() {
 function onTwoPlayer() {
     clearMain()
     drawGrid()
+    const tictactoe = new TicTacToe(gameSettings)
+    let restart = document.createElement('button')
+    restart.textContent = 'Restart'
+    restart.onclick = () => {
+        onTwoPlayer()
+    }
+    main.appendChild(restart)
+    tictactoe.setGridEvents()
     console.log(gameSettings)
 }
 
