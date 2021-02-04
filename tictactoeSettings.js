@@ -1,6 +1,6 @@
 
 
-// Réglages par défaut: le jeu se joue à deux, chacun son tour.
+
 let gameSettings = {
     'playerOne': 'human',
     'playerTwo': 'human',
@@ -14,6 +14,15 @@ function newTicTacToeGame() {
     clearGameSettings()
     console.log(gameSettings)
     setGameSettings()   
+}
+
+function newBigTacToeGame() {
+    clearMain()
+    clearGameSettings()
+    let workinProgress = document.createElement('h3')
+    workinProgress.style.textAlign = 'center'
+    workinProgress.textContent = 'Work in progress...'
+    main.appendChild(workinProgress)
 }
 
 function clearGameSettings() {
@@ -107,19 +116,6 @@ function play() {
     tictactoe.setGridEvents()
 }
 
-//function onTwoPlayer() {
-//    clearMain()
-//    drawGrid()
-//    const tictactoe = new TicTacToe(gameSettings)
-//    let restart = document.createElement('button')
-//    restart.textContent = 'Restart'
-//    restart.onclick = () => {
-//        onTwoPlayer()
-//    }
-//    main.appendChild(restart)
-//    tictactoe.setGridEvents()
-//    console.log(gameSettings)
-//}
 
 function clearMain() {
      while (main.firstChild) {
