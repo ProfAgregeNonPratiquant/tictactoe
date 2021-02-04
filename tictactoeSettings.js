@@ -33,7 +33,7 @@ function setGameSettings() {
 
     let twoPlayersButton = document.createElement('button')
     twoPlayersButton.textContent = 'Two players'
-    twoPlayersButton.onclick = onTwoPlayer
+    twoPlayersButton.onclick = play
 
     main.appendChild(onePlayerButton)
     main.appendChild(twoPlayersButton)
@@ -67,33 +67,59 @@ function chooseShape() {
 }
 
 function chooseDifficulty() {
-    let difficulties = ['Easy', 'Normal', 'Hard']
-    for(difficulty of difficulties) {
-        let button = document.createElement('button')
-        button.textContent = difficulty
-        main.appendChild(button)
-        button.onclick = () => {
-            gameSettings['difficulty'] = difficulty.toLowerCase()
+        let easy = document.createElement('button')
+        easy.textContent = 'Easy'
+        easy.onclick = () => {
+            gameSettings['difficulty'] = 'easy'
             console.log(gameSettings)
-            clearMain()
-            drawGrid()
-        }
-    }            
+            play()
+        }    
+        main.appendChild(easy)
+        let normal = document.createElement('button')
+        normal.textContent = 'Normal'
+        normal.onclick = () => {
+            gameSettings['difficulty'] = 'normal'
+            console.log(gameSettings)
+            play()
+        }    
+        main.appendChild(normal)
+
+        let hard = document.createElement('button')
+        hard.textContent = 'Hard'
+        hard.onclick = () => {
+            gameSettings['difficulty'] = 'hard'
+            console.log(gameSettings)
+            play()
+        }    
+        main.appendChild(hard)
 }
 
-function onTwoPlayer() {
+function play() {
     clearMain()
     drawGrid()
     const tictactoe = new TicTacToe(gameSettings)
     let restart = document.createElement('button')
     restart.textContent = 'Restart'
     restart.onclick = () => {
-        onTwoPlayer()
+        play()
     }
     main.appendChild(restart)
     tictactoe.setGridEvents()
-    console.log(gameSettings)
 }
+
+//function onTwoPlayer() {
+//    clearMain()
+//    drawGrid()
+//    const tictactoe = new TicTacToe(gameSettings)
+//    let restart = document.createElement('button')
+//    restart.textContent = 'Restart'
+//    restart.onclick = () => {
+//        onTwoPlayer()
+//    }
+//    main.appendChild(restart)
+//    tictactoe.setGridEvents()
+//    console.log(gameSettings)
+//}
 
 function clearMain() {
      while (main.firstChild) {
